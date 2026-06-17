@@ -1,0 +1,22 @@
+id: ops_011
+family: ops
+title: "Container/Singularity job"
+prompt: |
+  I want to run my analysis inside a Singularity container image at
+  /cvmfs/unpacked.cern.ch/registry.hub.docker.com/atlas/analysisbase:latest.
+  My script run_athena.sh is the executable. Write an HTCondor submit file
+  that runs the job inside this container. Use longlunch. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub to run run_athena.sh inside Singularity container from CVMFS, longlunch"
+  - id: p2
+    text: "Write condor submit file using +SingularityImage for an ATLAS AnalysisBase container"
+gold_attrs:
+  - executable
+  - +singularityimage
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "longlunch"

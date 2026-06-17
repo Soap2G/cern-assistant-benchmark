@@ -1,0 +1,49 @@
+# Benchmark cost parameters — fill with real CERN numbers before Day 5
+#
+# All monetary values in USD unless noted.
+# All "per_year" fields assume T=1 year window.
+#
+# ----- RAG infra (accGPT) -----
+vectorstore_monthly_usd: 0.0        # GPU/server cost for vector store hosting (always-on)
+crawl_cost_per_run_usd: 0.0         # compute cost per CDS crawl (embedding of corpus)
+crawls_per_year: 12                 # how often CDS is re-crawled (monthly = 12)
+reindex_mode: "full"                # "full" or "delta"
+reindexes_per_year: 12              # if delta, may equal crawls; if full, same
+corpus_tokens: 50_000_000          # total tokens in the RAG corpus (CDS docs)
+embed_price_per_token: 1.0e-7       # embedding model cost per input token (~$0.0001/1k)
+q_embed_tokens: 256                 # tokens in the user query embedding call
+retrieval_compute_usd_per_query: 0.0  # ANN search compute cost (vector DB query)
+
+# ----- Skills infra (Lumi) -----
+authoring_hours: 40                 # one-time: hours to write the skills
+maint_hours_per_year: 10            # ongoing: hours/year maintaining skills
+hourly_rate_usd: 80                 # burdened hourly cost (CERN staff/consultant)
+
+# ----- Shared (measured from logs) -----
+# Fill these from benchmark run telemetry (runner.py writes them to results/)
+ctx_tokens_skills: 32000            # median input tokens per query through Lumi
+ctx_tokens_rag: 4000                # median input tokens per query through accGPT (RAG context only)
+input_token_price_usd: 2.0e-6       # LLM input token price (GPT-4.1 ~$2/M)
+output_token_price_usd: 8.0e-6      # LLM output token price
+
+# ----- Volume (CERN real numbers — fill Day 5) -----
+queries_per_year: 5000              # N: estimated annual Lumi/accGPT queries
+# Operational queries:
+ops_fraction: 0.6                   # fraction of queries that are ops (HTCondor etc.)
+# CDS queries:
+cds_fraction: 0.4
+
+# ----- CDS externality (source-load) -----
+# RAG: number of CDS record-fetches per reindex run (full = entire corpus)
+cds_records_in_corpus: 50000        # total records in CDS corpus
+cds_requests_per_reindex: 50000     # full crawl = fetch every record
+# Lumi (live): only fetches on actual user demand
+# CDS externality ratio = (cds_requests_per_reindex * reindexes_per_year)
+#                        / (queries_per_year * cds_fraction)
+# Computed in model.py
+
+# ----- Sensitivity sweep range -----
+input_token_price_sweep:
+  low: 5.0e-7    # cheap (Haiku-class)
+  mid: 2.0e-6    # GPT-4.1 current
+  high: 1.5e-5   # flagship (Opus-class)

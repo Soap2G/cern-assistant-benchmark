@@ -1,0 +1,28 @@
+# Lumi-vs-accGPT benchmark — 4 parallel jobs, one per (system, family).
+# Each job runs `runner.py --system <s> --family <f>` and writes
+# results/bench_<s>_<f>.jsonl (+ _scores.jsonl) directly to EOS.
+#
+# Submit from this directory (after Kerberos/credmon is working):
+#   condor_submit bench.sub      (or ./submit.sh)
+
+universe                = vanilla
+executable              = run_bench.sh
+arguments               = $(system) $(family)
+
+# Console logs land back on EOS in batch/logs/
+output                  = logs/$(system)_$(family).$(ClusterId).$(ProcId).out
+error                   = logs/$(system)_$(family).$(ClusterId).$(ProcId).err
+log                     = logs/$(system)_$(family).$(ClusterId).$(ProcId).log
+
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_executable     = True
+
+request_cpus            = 1
+request_memory          = 4096
+request_disk            = 2048000
+
+# Plenty of headroom: lumi-cds is the longest leg (tool-heavy, up to ~3h).
++JobFlavour             = "workday"
+
+queue system, family from combos.txt

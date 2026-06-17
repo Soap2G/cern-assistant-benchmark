@@ -1,0 +1,17 @@
+id: ops_019
+family: ops
+title: "DAGMan simple chain"
+prompt: |
+  I have two HTCondor jobs that must run sequentially: first step1.sub,
+  then step2.sub (which depends on output from step1). Write a DAGMan
+  .dag file that chains step1 → step2 with a PARENT/CHILD relationship.
+paraphrases:
+  - id: p1
+    text: "Write an HTCondor DAGMan file with step1.sub → step2.sub parent-child dependency"
+  - id: p2
+    text: "How do I chain two condor jobs so step2 runs only after step1 finishes using DAGMan?"
+# DAGMan files don't have ClassAd attrs — check for PARENT/CHILD keywords
+gold_attrs:
+  - parent
+  - child
+gold_attr_values: {}

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtualenvs (live outside the tree, but ignore any local ones too)
+venv/
+.venv/
+env/
+
+# Benchmark run outputs — large, regenerable, not source
+results/*.jsonl
+results/*.png
+results/*.txt
+results/*.log
+results/*.done
+results/accgpt_manual/
+batch/logs/
+
+# Keep the results dir present in the repo
+!results/.gitkeep
+
+# Secrets — never commit keys
+*key*.txt
+*.key
+.env
+
+# Editor / OS noise
+.DS_Store
+*.swp

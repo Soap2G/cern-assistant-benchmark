@@ -1,0 +1,19 @@
+id: cds_008
+family: cds
+title: "2022 high-precision W boson mass measurement (CDF)"
+prompt: |
+  Find the CDS record for the high-precision W boson mass measurement
+  published in Science in April 2022 from the CDF experiment at the Tevatron.
+  Return the CDS record ID.
+paraphrases:
+  - id: p1
+    text: "CDS recid for the CDF W boson mass precision measurement published in Science 2022"
+  - id: p2
+    text: "What is the CERN document server record for the 2022 CDF mW measurement that differed from SM?"
+gold_recids:
+  - 2807452  # "High-precision measurement of the W boson mass with the CDF II detector" (2022-04-21)
+  - 2807125  # second CDS version of the same CDF W-mass paper
+k: 3
+threshold: 1.0
+min_hits: 1
+staleness_marker: false

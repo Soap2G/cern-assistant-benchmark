@@ -1,0 +1,8 @@
+executable            = probe.sh
+output                = probe.$(ClusterId).out
+error                 = probe.$(ClusterId).err
+log                   = probe.$(ClusterId).log
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
++JobFlavour           = "espresso"
+queue

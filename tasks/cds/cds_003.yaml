@@ -1,0 +1,17 @@
+id: cds_003
+family: cds
+title: "ATLAS detector paper (2008)"
+prompt: |
+  Find the CDS record for the ATLAS detector description paper published
+  in JINST in 2008 (the main detector paper, not a specific sub-detector).
+  Return the CDS record ID.
+paraphrases:
+  - id: p1
+    text: "CDS recid for the ATLAS detector paper JINST 3 S08003 2008"
+  - id: p2
+    text: "What is the CDS record number for the ATLAS detector description paper from 2008?"
+gold_recids:
+  - 1129811  # ATLAS detector paper, approximate recid
+k: 3
+threshold: 1.0
+staleness_marker: false

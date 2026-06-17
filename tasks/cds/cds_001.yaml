@@ -1,0 +1,19 @@
+id: cds_001
+family: cds
+title: "ATLAS Higgs discovery paper (H→ZZ→4l)"
+prompt: |
+  Find the CDS record(s) for the ATLAS paper reporting the observation of the
+  Higgs boson in the H→ZZ→4l channel from 2012. Return the CDS record IDs.
+paraphrases:
+  - id: p1
+    text: "What is the CDS recid for the ATLAS Higgs boson discovery paper in 4-lepton channel?"
+  - id: p2
+    text: "Give me the CERN document server record number for ATLAS H to ZZ to four leptons 2012 discovery"
+gold_recids:
+  - 1471031  # arXiv:1207.7214 — ATLAS combined Higgs observation PLB paper (2012)
+  - 1499628  # ATLAS-CONF-2012-169 — H→ZZ→4l observation note (2012)
+  - 1511050  # CERN-PH-EP-2012-303 — "A Particle Consistent with the Higgs Boson" (2012)
+k: 5
+threshold: 0.8
+min_hits: 1
+staleness_marker: false

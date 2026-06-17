@@ -1,0 +1,18 @@
+id: cds_002
+family: cds
+title: "Search for ATLAS top quark mass measurement papers"
+prompt: |
+  Search CDS for ATLAS papers measuring the top quark mass published
+  after 2020. Return the record IDs of up to 5 relevant results.
+paraphrases:
+  - id: p1
+    text: "Find recent CDS records (2020+) of ATLAS top quark mass measurements"
+  - id: p2
+    text: "What CDS recids correspond to ATLAS top mass measurements from 2021 onwards?"
+gold_recids:
+  - 2898486  # ATLAS+CMS top quark mass combination arXiv:2402.08713 (2024)
+  - 2891743  # ATLAS inclusive/differential ttbar cross sections arXiv:2403.09452 (2024)
+  - 2641608  # ATLAS top quark mass ttbar arXiv:1810.01772 (2019, baseline)
+k: 5
+threshold: 0.6
+staleness_marker: false

@@ -1,0 +1,23 @@
+id: ops_009
+family: ops
+title: "Parametric job with queue from list"
+prompt: |
+  I have a Python script process_dataset.py that takes a dataset name as its
+  only argument. I want to submit one job for each of these datasets:
+  ttbar, zjets, wjets, diboson.
+  Write an HTCondor submit file using "queue arguments from" to run all four.
+  Use longlunch. Logs in logs/ with the argument in the filename.
+paraphrases:
+  - id: p1
+    text: "HTCondor parametric submit: process_dataset.py with args ttbar zjets wjets diboson, queue from list, longlunch"
+  - id: p2
+    text: "How do I submit one condor job per dataset name using 'queue from' in an HTCondor sub file?"
+gold_attrs:
+  - executable
+  - arguments
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "longlunch"

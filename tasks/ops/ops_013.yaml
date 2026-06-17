@@ -1,0 +1,22 @@
+id: ops_013
+family: ops
+title: "Job with environment variables"
+prompt: |
+  My script setup_and_run.sh needs two environment variables set:
+  ATLAS_RELEASE=25.2.12 and DATA_PATH=/eos/user/g/gguerrie/input.
+  Write an HTCondor submit file that sets these via the 'environment' ClassAd.
+  Use longlunch. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub for setup_and_run.sh: set ATLAS_RELEASE and DATA_PATH env vars, longlunch"
+  - id: p2
+    text: "How do I pass environment variables to a condor job using the environment ClassAd?"
+gold_attrs:
+  - executable
+  - environment
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "longlunch"

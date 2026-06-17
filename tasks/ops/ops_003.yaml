@@ -1,0 +1,22 @@
+id: ops_003
+family: ops
+title: "Transfer input files"
+prompt: |
+  I need to run a ROOT macro called process.C on the batch. It reads a
+  configuration file config.json that must be transferred to the worker node.
+  Write a condor submit file that transfers both process.C and config.json
+  to the worker node. Use the longlunch flavour. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub: transfer process.C and config.json to worker, run process.C, longlunch, logs in logs/"
+  - id: p2
+    text: "How do I use transfer_input_files in a condor sub file to ship process.C and config.json to the node?"
+gold_attrs:
+  - executable
+  - transfer_input_files
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "longlunch"

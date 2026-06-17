@@ -1,0 +1,21 @@
+id: ops_007
+family: ops
+title: "Requirements expression for specific OS"
+prompt: |
+  I need my HTCondor job to run only on nodes with AlmaLinux 9 (el9).
+  My script is run_sim.sh. Write a submit file with a Requirements expression
+  that selects el9 machines, using the longlunch flavour. Logs in sim_logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub for run_sim.sh: Requirements to select AlmaLinux 9 worker nodes, longlunch"
+  - id: p2
+    text: "Write condor submit with Requirements expression for el9/AlmaLinux9 to run run_sim.sh"
+gold_attrs:
+  - executable
+  - requirements
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "longlunch"

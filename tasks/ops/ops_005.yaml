@@ -1,0 +1,22 @@
+id: ops_005
+family: ops
+title: "GPU request"
+prompt: |
+  I have a Python training script train_dnn.py that requires one NVIDIA GPU.
+  Write an HTCondor submit file to request exactly 1 GPU on CERN lxbatch.
+  Use the tomorrow flavour. Store logs in gpu_logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub to run train_dnn.py with 1 GPU, tomorrow flavour, logs in gpu_logs/"
+  - id: p2
+    text: "How do I request a GPU in my condor submit file at CERN to run train_dnn.py?"
+gold_attrs:
+  - executable
+  - request_gpus
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  request_gpus: "1"
+  "+jobflavour": "tomorrow"

@@ -1,0 +1,20 @@
+id: cds_004
+family: cds
+title: "Recent ATLAS Wtb coupling measurement — staleness test"
+prompt: |
+  Find the most recent ATLAS measurement of the Wtb coupling or
+  single top quark production cross-section published in 2024 or 2025.
+  Return the CDS record IDs.
+paraphrases:
+  - id: p1
+    text: "What are the CDS recids for ATLAS single top or Wtb papers published in 2024-2025?"
+  - id: p2
+    text: "Find the latest ATLAS single top quark production measurement on CDS from 2024 or newer"
+# Gold recids must be verified against live CDS — this is a staleness test
+# Lumi (live) should find them; RAG (indexed pre-2024) may miss them
+gold_recids:
+  - 2890694  # ATLAS t-channel single top arXiv:2403.02126 (2024-05-28)
+  - 2952034  # ATLAS differential t-channel single top arXiv:2601.04938 (2026-05-15)
+k: 5
+threshold: 0.5
+staleness_marker: true

@@ -1,0 +1,16 @@
+id: ops_020
+family: ops
+title: "Diagnosing a held job"
+prompt: |
+  My HTCondor job is stuck in Held status. I ran condor_q and got cluster ID
+  12345678. Write the condor command(s) to find out WHY it's held and then
+  release it if the hold reason is 'Input file is not executable'.
+paraphrases:
+  - id: p1
+    text: "How do I find the hold reason for condor job 12345678 and release it if it's a permissions issue?"
+  - id: p2
+    text: "What condor commands diagnose and release a held HTCondor job with cluster ID 12345678?"
+# For diagnostic/command tasks — check that relevant commands appear in the answer
+gold_attrs:
+  - condor_q
+gold_attr_values: {}

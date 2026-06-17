@@ -1,0 +1,19 @@
+id: cds_007
+family: cds
+title: "ATLAS-CONF note for dijet mass spectrum"
+prompt: |
+  Search CDS for ATLAS conference notes (ATLAS-CONF) about dijet mass
+  spectrum searches for new physics. Return up to 5 record IDs.
+paraphrases:
+  - id: p1
+    text: "Find ATLAS-CONF CDS records about dijet resonance searches or dijet mass spectrum"
+  - id: p2
+    text: "What CDS recids are for ATLAS conference notes on dijet mass spectrum new physics searches?"
+gold_recids:
+  - 2962836  # ATLAS search for EW-scale dijet resonances arXiv:2606.03222 (2026)
+  - 2941467  # ATLAS EW-scale dijet resonances arXiv:2509.01219 (2025)
+  - 2206175  # ATLAS-CONF-2016-060 dijet mass distribution search
+  - 1493487  # ATLAS-CONF-2012-148 dijet mass new phenomena
+k: 5
+threshold: 0.5
+staleness_marker: false

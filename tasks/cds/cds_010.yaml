@@ -1,0 +1,20 @@
+id: cds_010
+family: cds
+title: "ATLAS 2025 conference note — staleness test"
+prompt: |
+  Find any ATLAS conference note (ATLAS-CONF) published in 2025 about
+  Higgs boson measurements. Return the CDS record IDs.
+paraphrases:
+  - id: p1
+    text: "What ATLAS-CONF notes about the Higgs boson were posted to CDS in 2025?"
+  - id: p2
+    text: "Search CDS for ATLAS-CONF-2025 records related to Higgs measurements"
+# This is explicitly a freshness test: records that post-date any 2024 accGPT index
+gold_recids:
+  - 2947512  # ATLAS-CONF-2025-012 ATLAS+CMS Higgs combination (2025)
+  - 2937635  # ATLAS-CONF-2025-007 Higgs→Z boson+photon (2025)
+  - 2937634  # ATLAS-CONF-2025-006 Higgs boson production combined (2025)
+  - 2929042  # ATLAS-CONF-2025-002 Higgs measurements interpretation (2025)
+k: 5
+threshold: 0.3  # Lower threshold — staleness demonstration, not quality gate
+staleness_marker: true

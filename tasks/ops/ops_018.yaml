@@ -1,0 +1,22 @@
+id: ops_018
+family: ops
+title: "Job array with different input files via queue matching"
+prompt: |
+  I have 50 input files named input_0000.root through input_0049.root in
+  /eos/user/g/gguerrie/input/. Write an HTCondor submit file that runs
+  process_file.sh for each file, passing the file path as an argument.
+  Use 'queue inputfile matching /eos/user/g/gguerrie/input/input_*.root'
+  or equivalent. Use workday. Per-job logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor parametric job: process_file.sh for each input_*.root file, queue matching glob, workday"
+  - id: p2
+    text: "How to submit one condor job per ROOT file in a directory using queue matching or queue from?"
+gold_attrs:
+  - executable
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "workday"

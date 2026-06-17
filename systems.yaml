@@ -1,0 +1,26 @@
+# System registry — add a model/framework by adding an entry here plus an
+# adapter module. The runner loads adapters from this file; nothing else needs
+# to change. Each adapter's constructor is called as:
+#     Adapter(record=<bool>, **params)
+# and must accept (and may ignore) `record` plus any extra keyword params.
+#
+# Fields:
+#   adapter  — "module.path:ClassName" (importable from the benchmark root)
+#   repeats  — how many times to run each variant (>1 for stochastic systems)
+#   params   — kwargs passed to the adapter constructor
+#   label    — optional human-readable name for reports
+
+systems:
+  lumi:
+    adapter: adapters.lumi:LumiAdapter
+    repeats: 1
+    label: "Lumi (skills+docs, opencode)"
+    params:
+      model: litellm/gpt-4.1
+
+  accgpt:
+    adapter: adapters.accgpt:AccGPTAdapter
+    repeats: 3
+    label: "accGPT (RAG)"
+    params:
+      model: accgpt

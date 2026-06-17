@@ -1,0 +1,22 @@
+id: ops_016
+family: ops
+title: "Concurrency limit via concurrency_limits"
+prompt: |
+  I want at most 5 of my HTCondor jobs to run at the same time to avoid
+  overloading a shared NFS resource. Write a submit file for crunch.sh
+  using concurrency_limits to cap at 5 simultaneous running jobs.
+  Use workday. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub for crunch.sh with concurrency_limits to max 5 parallel jobs, workday"
+  - id: p2
+    text: "How do I limit the number of simultaneously running HTCondor jobs using concurrency_limits?"
+gold_attrs:
+  - executable
+  - concurrency_limits
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "workday"

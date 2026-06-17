@@ -1,0 +1,22 @@
+id: ops_008
+family: ops
+title: "EOS output file transfer back"
+prompt: |
+  My job run_merge.sh produces an output file output.root that I want
+  transferred back to my EOS space at /eos/user/g/gguerrie/results/.
+  Write an HTCondor submit file with transfer_output_files and
+  output_destination set correctly. Use workday. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub: run_merge.sh, transfer output.root back to /eos/user/g/gguerrie/results/, workday"
+  - id: p2
+    text: "How to transfer a job output file back to EOS in an HTCondor submit file at CERN?"
+gold_attrs:
+  - executable
+  - transfer_output_files
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "workday"

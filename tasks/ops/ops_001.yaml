@@ -1,0 +1,21 @@
+id: ops_001
+family: ops
+title: "Basic executable submission"
+prompt: |
+  I have a shell script called run_analysis.sh with no arguments.
+  Write a complete HTCondor submit file to run it on CERN lxbatch with the
+  longlunch job flavour. Direct stdout to logs/run.out, stderr to logs/run.err,
+  and the condor log to logs/run.log.
+paraphrases:
+  - id: p1
+    text: "Create an HTCondor .sub file for run_analysis.sh, longlunch queue, output in logs/"
+  - id: p2
+    text: "How do I submit run_analysis.sh to lxbatch with +JobFlavour longlunch and logs in logs/?"
+gold_attrs:
+  - executable
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "longlunch"

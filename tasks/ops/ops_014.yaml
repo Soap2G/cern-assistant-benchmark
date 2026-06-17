@@ -1,0 +1,22 @@
+id: ops_014
+family: ops
+title: "Periodic release held jobs"
+prompt: |
+  I want my HTCondor jobs to automatically be re-released from held status
+  up to 3 times if they go on hold. Write a submit file for my_job.sh
+  that uses periodic_release and on_exit_hold to implement this retry logic.
+  Use workday. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub with periodic_release to auto-retry held jobs up to 3 times, workday"
+  - id: p2
+    text: "How to configure an HTCondor job to automatically release itself from hold status with a retry limit?"
+gold_attrs:
+  - executable
+  - periodic_release
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "workday"

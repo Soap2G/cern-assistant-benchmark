@@ -1,0 +1,22 @@
+id: ops_015
+family: ops
+title: "Disk space request"
+prompt: |
+  My simulation job generate_events.sh unpacks large files and needs
+  at least 20 GB of scratch disk on the worker node. Write an HTCondor
+  submit file requesting 20 GB with request_disk. Use the nextweek flavour.
+  Logs in gen_logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub: request_disk 20 GB for generate_events.sh, nextweek flavour, logs in gen_logs/"
+  - id: p2
+    text: "How do I request 20 GB of local scratch disk in my condor submit file at CERN?"
+gold_attrs:
+  - executable
+  - request_disk
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "nextweek"

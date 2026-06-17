@@ -1,0 +1,21 @@
+id: ops_004
+family: ops
+title: "Multi-job queue with ClusterId/ProcId in filenames"
+prompt: |
+  I want to submit 10 identical jobs to HTCondor. Each job runs run_job.sh
+  and should have its own output, error, and log files named with the cluster
+  and process IDs (e.g. job.$(ClusterId).$(ProcId).out). Use the microcentury
+  flavour. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "Submit 10 HTCondor jobs running run_job.sh, each with unique log filenames using ClusterId and ProcId, microcentury"
+  - id: p2
+    text: "Write an HTCondor submit file that queues 10 copies of run_job.sh with per-job log files"
+gold_attrs:
+  - executable
+  - output
+  - error
+  - log
+  - +jobflavour
+gold_attr_values:
+  "+jobflavour": "microcentury"

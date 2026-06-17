@@ -1,0 +1,21 @@
+id: ops_012
+family: ops
+title: "Job with Rank expression to prefer faster nodes"
+prompt: |
+  I want to prefer faster nodes for my HTCondor job but not require them.
+  Write a submit file for benchmark.sh that uses a Rank expression to
+  prefer nodes with higher Memory. Use the workday flavour. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub for benchmark.sh with Rank = Memory to prefer high-memory nodes, workday"
+  - id: p2
+    text: "How do I use the Rank ClassAd in an HTCondor submit file to prefer faster machines?"
+gold_attrs:
+  - executable
+  - rank
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "workday"

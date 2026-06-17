@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "=== node probe ==="
+echo "host: $(hostname)"
+echo "date: $(date)"
+echo "whoami: $(whoami)"
+echo "afs_config: $(ls -d /afs/cern.ch/user/g/gguerrie/lumi-assistant/config 2>&1 | head -1)"
+echo "eos_bench: $(ls -d /eos/user/g/gguerrie/benchmark 2>&1 | head -1)"
+echo "opencode: $(test -x /cvmfs/sw.escape.eu/lumi/latest/bin/opencode && echo OK || echo MISSING)"
+echo "cds_venv_py: $(/eos/user/g/gguerrie/cds-mcp-venv/bin/python --version 2>&1)"
+echo "key: $(test -f /eos/user/g/gguerrie/lumi_assistant/key.txt && echo OK || echo MISSING)"
+echo "litellm_http: $(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://llmgw-litellm.web.cern.ch/health 2>&1)"
+echo "accgpt_http: $(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://accgpt-ui.app.cern.ch/health 2>&1)"
+echo "cds_http: $(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://cds.cern.ch 2>&1)"
+echo "bench_venv: $(/eos/user/g/gguerrie/bench-venv/bin/python -c 'import yaml,requests,htcondor2' 2>&1 && echo OK)"
+echo "cvmfs_escape: $(test -x /cvmfs/sw.escape.eu/lumi/latest/bin/opencode && echo MOUNTED || echo NOT-MOUNTED)"
+_eostest=/eos/user/g/gguerrie/benchmark/results/.probe_eos_write_$$
+echo "eos_write: $(echo ok > "$_eostest" 2>/dev/null && echo OK && rm -f "$_eostest" || echo FAILED)"
+echo "=== end probe ==="

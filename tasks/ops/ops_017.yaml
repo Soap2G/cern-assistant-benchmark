@@ -1,0 +1,22 @@
+id: ops_017
+family: ops
+title: "Python bindings job submission"
+prompt: |
+  I want to submit an HTCondor job programmatically using the htcondor2
+  Python bindings (not condor_submit). Write Python code that creates a
+  Submit object for my_script.sh with longlunch flavour and submits it
+  to the local schedd.
+paraphrases:
+  - id: p1
+    text: "Use the htcondor2 Python module to submit my_script.sh with longlunch to the local schedd"
+  - id: p2
+    text: "How to submit an HTCondor job using Python htcondor2 bindings instead of condor_submit?"
+# Note: for Python bindings tasks, gold_attrs checked against the Submit dict keys
+gold_attrs:
+  - executable
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "longlunch"

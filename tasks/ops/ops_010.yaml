@@ -1,0 +1,21 @@
+id: ops_010
+family: ops
+title: "Kerberos credential forwarding"
+prompt: |
+  My HTCondor job needs to access AFS and EOS, so it needs Kerberos credentials.
+  Write a submit file for my script read_eos.sh that enables Kerberos
+  forwarding (use_x509userproxy or kerberos_credentials = true as appropriate
+  for CERN lxbatch). Use workday. Logs in logs/.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub for read_eos.sh that needs Kerberos/AFS access at CERN, workday flavour"
+  - id: p2
+    text: "How do I forward Kerberos credentials to my condor job at CERN so it can read EOS?"
+gold_attrs:
+  - executable
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "workday"

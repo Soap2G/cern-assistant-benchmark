@@ -1,0 +1,23 @@
+id: ops_006
+family: ops
+title: "Memory and CPU request"
+prompt: |
+  My analysis script analyze_events.py needs 4 GB of RAM and 2 CPU cores.
+  Write an HTCondor submit file for CERN lxbatch requesting these resources.
+  Use the workday flavour. Logs to batch_logs/.
+paraphrases:
+  - id: p1
+    text: "Condor submit for analyze_events.py: 4 GB RAM, 2 CPUs, workday, logs to batch_logs/"
+  - id: p2
+    text: "How to request 4 GB memory and 2 CPUs in an HTCondor sub file at CERN?"
+gold_attrs:
+  - executable
+  - request_memory
+  - request_cpus
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  request_cpus: "2"
+  "+jobflavour": "workday"

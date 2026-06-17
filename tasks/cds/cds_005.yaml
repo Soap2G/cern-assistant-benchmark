@@ -1,0 +1,18 @@
+id: cds_005
+family: cds
+title: "HTCondor batch documentation technical note"
+prompt: |
+  Find CDS records that are CERN technical notes or documentation about
+  HTCondor batch system at CERN. Return record IDs for the most relevant ones.
+paraphrases:
+  - id: p1
+    text: "CDS recids for CERN technical notes about the HTCondor batch system"
+  - id: p2
+    text: "Search CDS for documentation or notes about HTCondor at CERN lxbatch service"
+gold_recids:
+  - 2928076  # "Efficient Workflow Management in High-Energy Physics" (2025)
+  - 2929586  # "CMS Token Transition" — HTCondor auth at CERN (2025)
+  - 2767524  # "First experiences with portable analysis in HTCondor" (2021)
+k: 5
+threshold: 0.5
+staleness_marker: false

@@ -1,0 +1,22 @@
+id: ops_002
+family: ops
+title: "Python script with arguments"
+prompt: |
+  Submit a Python script called fit_spectrum.py to HTCondor at CERN.
+  It takes two arguments: an input ROOT file path and an output directory.
+  Use the workday job flavour. Put logs in /eos/user/g/gguerrie/logs/.
+  The executable should be the Python interpreter at /usr/bin/python3.
+paraphrases:
+  - id: p1
+    text: "HTCondor sub file: python3 fit_spectrum.py <input.root> <outdir>, workday, logs in /eos/user/g/gguerrie/logs/"
+  - id: p2
+    text: "Write condor_submit file to run fit_spectrum.py with two CLI args using the workday flavour"
+gold_attrs:
+  - executable
+  - arguments
+  - +jobflavour
+  - output
+  - error
+  - log
+gold_attr_values:
+  "+jobflavour": "workday"

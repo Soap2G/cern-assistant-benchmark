@@ -1,0 +1,18 @@
+id: cds_006
+family: cds
+title: "ATLAS Run 3 data-taking paper"
+prompt: |
+  Find the CDS record(s) describing the ATLAS detector performance or
+  data-taking summary for LHC Run 3 (2022 onwards). Return record IDs.
+paraphrases:
+  - id: p1
+    text: "What CDS records describe ATLAS Run 3 detector performance or data collection?"
+  - id: p2
+    text: "Search CDS for ATLAS papers about LHC Run 3 data taking conditions published 2022-2025"
+gold_recids:
+  - 2919259  # ATLAS LAr Calorimeter Commissioning Run 3 (2024)
+  - 2876371  # ATLAS LAr Calorimeter Commissioning for LHC Run 3 (2023, ATL-LARG-SLIDE-2023-58)
+  - 2867831  # ATLAS LAr Calorimeter Commissioning Run 3 proc (2023, ATL-LARG-PROC-2023-002)
+k: 5
+threshold: 0.5
+staleness_marker: true  # Run 3 papers may post-date accGPT's index

@@ -1,0 +1,19 @@
+id: cds_009
+family: cds
+title: "ATLAS open data paper"
+prompt: |
+  Find the CDS record for the ATLAS Open Data paper or technical documentation
+  describing the public open data release for education purposes.
+  Return the record ID(s).
+paraphrases:
+  - id: p1
+    text: "CDS recid for the ATLAS Open Data paper describing the educational dataset release"
+  - id: p2
+    text: "What CDS record describes the ATLAS public open data release for students and educators?"
+gold_recids:
+  - 2942593  # "Latest releases of ATLAS Open Data for Education" ATL-OREACH-PROC-2025 (2025)
+  - 2911154  # "Open Data at ATLAS: Bringing TeV collisions to..." ATL-OREACH-PROC-2024 (2024)
+  - 2937795  # "Latest releases of ATLAS Open Data for Education" slide (2025)
+k: 5
+threshold: 0.5
+staleness_marker: false
